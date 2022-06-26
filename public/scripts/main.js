@@ -5,7 +5,10 @@ let language = params.get('language');
 let dictionary = new Dictionary(language);
 
 document.getElementById("target_button_id").addEventListener('click', () => {
-    console.log('{ "link": "" }');
+    console.log('{ "link": "test" }');
+});
+document.getElementById("upsalle_id").addEventListener('click', () => {
+    console.log('{ "link": "upsalle" }');
 });
 document.getElementsByName("dictionary").forEach(element => {
     element.textContent = dictionary.text(element.id);
