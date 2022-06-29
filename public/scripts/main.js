@@ -1,8 +1,11 @@
 import Dictionary from './Dictionary.js';
+import banners from './setup_banners.js';
 
-let params = new URLSearchParams(window.location.search);
-let language = params.get('language');
-let dictionary = new Dictionary(language);
+document.getElementById("main_section_id").appendChild(banners());
+
+const params = new URLSearchParams(window.location.search);
+const language = params.get("language");
+const dictionary = new Dictionary(language);
 
 document.getElementById("target_button_id").addEventListener('click', () => {
     console.log('{ "link": "test" }');

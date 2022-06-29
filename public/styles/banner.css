@@ -1,0 +1,40 @@
+.banner_section {
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(90deg, #F5F6F7 0%, #F9F9F9 100%);
+    border-radius: 8px;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+.banner_section>div {
+    flex-direction: column;
+    width: 100%;
+}
+
+.banner_title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+    font-weight: bold;
+    letter-spacing: .01em;
+    margin: 0px;
+}
+
+.bunner_subtitle {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 114%;
+    letter-spacing: .02em;
+    color: #1E2025;
+    margin: 4px 0px 0px 0px;
+}
+
+.banners {
+    padding: 0%;
+    margin: 16px 0px 0px 0px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
