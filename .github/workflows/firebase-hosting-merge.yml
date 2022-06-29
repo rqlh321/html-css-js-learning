@@ -15,4 +15,5 @@ jobs:
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_LEARNING_2B2CC }}'
+          channelId: live
           projectId: learning-2b2cc
