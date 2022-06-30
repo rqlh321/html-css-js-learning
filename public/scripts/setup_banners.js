@@ -1,12 +1,11 @@
-export default function banners() {
+export default function banners(elements) {
     const ul = document.createElement('ul');
     ul.setAttribute('class', 'banners');
-
-    for (let i = 0; i < 50; i++) {
+    elements.forEach(element => {
         const li = document.createElement("li");
-        li.appendChild(banner('upsalle'));
+        li.appendChild(banner(element));
         ul.appendChild(li);
-    }
+    });
 
     return ul;
 }
