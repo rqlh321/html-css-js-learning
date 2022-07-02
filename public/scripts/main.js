@@ -1,17 +1,14 @@
-import Dictionary from './Dictionary.js';
-import banners from './setup_banners.js';
+import LocalDictionary from './dictionary/LocalDictionary.js';
+import banners from './ui/banners.js';
 
-const elements = ["upsalle"]
-document.getElementById("main_section_id").appendChild(banners(elements));
+const elements = ["upsalle"];
+const generated_banners = banners(elements);
+document.getElementById("main_section_id").appendChild(generated_banners);
 
-const params = new URLSearchParams(window.location.search);
-const language = params.get("language");
-const dictionary = new Dictionary(language);
-
+const dictionary = new LocalDictionary();
 document.getElementsByName("dictionary").forEach(element => {
-    element.textContent = dictionary.text(element.id);
+    element.textContent = dictionary.get(element.id);
 });
-
 
 document.getElementById("target_button_id").addEventListener('click', () => {
     console.log('{ "link": "test" }');

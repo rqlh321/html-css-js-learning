@@ -1,14 +1,12 @@
-export default class Dictionary {
+import language from './language.js';
 
-    #language;
-    #russian_dictionary;
-    #english_dictionary;
+export default class LocalDictionary {
 
-    constructor(language) {
-        this.#language = language
-        this.#russian_dictionary = new Map();
-        this.#english_dictionary = new Map();
-
+    #language = language()
+    #russian_dictionary = new Map();
+    #english_dictionary = new Map();
+    
+    constructor() {
         this.#english_dictionary.set('title_id', 'Hello World!');
         this.#english_dictionary.set('upsalle_title_id', 'More benefits');
         this.#english_dictionary.set('upsalle_subtitle_id', 'With premium program');
@@ -22,7 +20,7 @@ export default class Dictionary {
         this.#russian_dictionary.set('target_button_id', 'Целевое действие');
     }
 
-    text(key) {
+    get(key) {
         switch (this.#language) {
             case 'ru': return this.#russian_dictionary.get(key)
             case 'en': return this.#english_dictionary.get(key)
