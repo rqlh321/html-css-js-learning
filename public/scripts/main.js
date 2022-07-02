@@ -1,18 +1,21 @@
 import LocalDictionary from './dictionary/LocalDictionary.js';
 import banners from './ui/banners.js';
 
-const elements = ["upsalle"];
-const generated_banners = banners(elements);
-document.getElementById("main_section_id").appendChild(generated_banners);
+generate_ui()
+set_listeners()
 
-const dictionary = new LocalDictionary();
-document.getElementsByName("dictionary").forEach(element => {
-    element.textContent = dictionary.get(element.id);
-});
+function generate_ui() {
+    const dictionary = new LocalDictionary();
+    const elements = ["upsalle", "salle", "salle", "salle", "salle", "salle", "salle", "salle", "salle", "salle", "salle"];
+    const generated_banners = banners(elements);
+    document.getElementById("main_section_id").appendChild(generated_banners);
+    document.getElementsByName("dictionary").forEach((element) => {
+        element.textContent = dictionary.get(element.id);
+    });
+}
 
-document.getElementById("target_button_id").addEventListener('click', () => {
-    console.log('{ "link": "test" }');
-});
-document.getElementById("upsalle_id").addEventListener('click', () => {
-    console.log('{ "link": "upsalle" }');
-});
+function set_listeners() {
+    document.getElementById("target_button_id").addEventListener('click', () => {
+        console.log('{ "link": "target_button" }');
+    });
+}

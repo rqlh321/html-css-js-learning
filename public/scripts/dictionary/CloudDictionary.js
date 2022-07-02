@@ -10,6 +10,7 @@ export default class CloudDictionary {
     }
 
     get(key) {
-        this.#dictionary.get(key)
+        let result = this.#dictionary.get(key)
+        return result == null ? key : result
     }
 }

@@ -21,11 +21,13 @@ export default class LocalDictionary {
     }
 
     get(key) {
+        let result
         switch (this.#language) {
-            case 'ru': return this.#russian_dictionary.get(key)
-            case 'en': return this.#english_dictionary.get(key)
-            default: return this.#english_dictionary.get(key)
+            case 'ru': result = this.#russian_dictionary.get(key)
+            case 'en': result = this.#english_dictionary.get(key)
+            default: result = this.#english_dictionary.get(key)
         }
+        return result == null ? key : result
     }
 
 }

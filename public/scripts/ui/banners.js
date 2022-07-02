@@ -4,6 +4,9 @@ export default function banners(elements) {
     elements.forEach(element => {
         const li = document.createElement("li");
         li.appendChild(banner(element));
+        li.addEventListener('click', () => {
+            console.log(`{ "link": "${element}" }`);
+        });
         ul.appendChild(li);
     });
 
@@ -32,7 +35,9 @@ function banner(name) {
     section.appendChild(text_div);
 
     const image = document.createElement('img');
-    image.setAttribute('src', './assets/money_icon.svg');
+    image.setAttribute('src', `./assets/${name}_icon.svg`);
+    image.setAttribute('alt', name);
+    image.setAttribute('onerror', "this.style.display='none'");
     section.appendChild(image);
 
     return section;
